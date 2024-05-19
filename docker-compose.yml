@@ -12,4 +12,4 @@ services:
       if [ -f /workspace/requirements.txt ]; then pip install --user -r /workspace/requirements.txt; fi;
       pip install --user streamlit;
       export PATH=\$PATH:/root/.local/bin;
-      streamlit run /workspace/application.py --server.enableCORS false --server.enableXsrfProtection false"
+      streamlit run /workspace/app.py --server.enableCORS false --server.enableXsrfProtection false"

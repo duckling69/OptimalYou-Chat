@@ -31,3 +31,6 @@ python-socketio==5.11.1
 streamlit==1.33.0
 toml==0.10.2
 vertexai==1.49.0
+flask
+transformers
+tensorflow

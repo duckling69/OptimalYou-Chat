@@ -2,12 +2,14 @@ import json
 import streamlit as st
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras.models import load_model
+from keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
+import os
+print("Current working directory:", os.getcwd())
 
 # Load the model, tokenizer, and label encoder
-model = load_model('chatbot_model.h5')
+model = load_model('/workspaces/OptimalYou-Chat/chatbot_model.h5')
 
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)

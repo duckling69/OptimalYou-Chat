@@ -1,4 +1,1 @@
-flask
-google-cloud-vertex-ai
-pandas
-transformers
+
