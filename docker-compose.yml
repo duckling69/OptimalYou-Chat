@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  dev:
+    build: .
+    volumes:
+      - .:/workspace
+    ports:
+      - "8501:8501"
+    network_mode: bridge
+    command: /bin/bash -c "
+      if [ -f /workspace/packages.txt ]; then sudo apt-get update && sudo apt-get install -y \$(cat /workspace/packages.txt) && sudo rm -rf /var/lib/apt/lists/*; fi;
+      if [ -f /workspace/requirements.txt ]; then pip install --user -r /workspace/requirements.txt; fi;
+      pip install --user streamlit;
+      export PATH=\$PATH:/root/.local/bin;
+      streamlit run /workspace/application.py --server.enableCORS false --server.enableXsrfProtection false"
